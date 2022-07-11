@@ -1,5 +1,5 @@
 const autos = require("./autos");
-const potencialComprador = require("./comprador")
+const potencialComprador = require("./comprador");
 
 
 const concesionaria = {
@@ -23,14 +23,14 @@ const concesionaria = {
         return filtrador;
     },
     autosNuevos: function () {
+        let autosNuevos = []
         let autosParaVenta = this.autosParaLaVenta();
-        for (let e of autosParaVenta) {
-            if (e.km <= 100) {
-                return e;
-            } else {
-                return "No hay"
+        for (let auto of autosParaVenta) {
+            if (auto.km < 100) {
+            autosNuevos.push(auto)                
             }
         }
+        return autosNuevos;
     },
     listaDeVentas: function () {
         let precios = []
@@ -69,11 +69,16 @@ const concesionaria = {
     }
 }
 
-console.log(concesionaria.venderAuto("APL123"))
-console.log(concesionaria.autosParaLaVenta())
+// console.log(concesionaria.buscarAuto("APL123"))
+console.log(concesionaria.venderAuto("JJK116"))
+//  console.log(concesionaria.autosParaLaVenta())
 console.log(concesionaria.autosNuevos());
+console.log("--------------------------------------------------")
+
+
+/*
 console.log(concesionaria.listaDeVentas());
 console.log(concesionaria.totalDeVentas());
 console.log(concesionaria.puedeComprar(autos[0], potencialComprador));
 console.log(concesionaria.autosQuePuedeComprar(potencialComprador));
-
+*/

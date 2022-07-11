@@ -20,6 +20,17 @@ let autos = [
         anio: 2019,
         patente: "JJK116",
         vendido: false
+    },
+    {
+        marca: "BMW",
+        modelo: "M3",
+        precio: 100000,
+        km: 50,
+        color: "VERDE",
+        cuotas: 5,
+        anio: 2019,
+        patente: "CDL223",
+        vendido: false
     }
 ]
 
