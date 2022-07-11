@@ -10,15 +10,11 @@ const concesionaria = {
             }
         }
         return null;
-    }, 
+    },
     venderAuto: function (patente) {
         let buscador = this.buscarAuto(patente);
-        if (buscador.patente !== null) {
-            buscador.vendido = true;
-        }
-         let nuevoAutos = autos;
-         return nuevoAutos;
-        
+        buscador.vendido = true;
+        return buscador;        
     },
     autosParaLaVenta: function () {
         const filtrador = autos.filter(auto => auto.vendido == false);
@@ -28,16 +24,20 @@ const concesionaria = {
         let autosParaVenta = this.autosParaLaVenta();
         for (let auto of autosParaVenta) {
             if (auto.km <= 100) {
-            return auto
+                return auto
             } else {
                 return "ningun auto cumple con los requisitos"
             }
-        }      
+        }
+    },
+    listadeVentas: function () {
+        return this.venderAuto();
     }
 }
 
 // console.log(concesionaria.buscarAuto("APL123"))
 console.log(concesionaria.venderAuto("JJK116"))
-// console.log(concesionaria.autosParaLaVenta());
+console.log(concesionaria.autosParaLaVenta());
 console.log(concesionaria.autosNuevos());
+console.log(concesionaria.listadeVentas());
 
