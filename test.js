@@ -38,7 +38,7 @@ const concesionaria = {
             if (auto.vendido == true) {
                 precios.push(auto.precio)
             } else {
-                 false;
+                false;
             }
         }
         return precios;
@@ -57,24 +57,23 @@ const concesionaria = {
             return false
         }
     },
-    autosQuePuedeComprar: function () {
+    autosQuePuedeComprar: function (cliente) {
         let mostrarCliente = [];
-        // let autosParaVenta = this.autosParaLaVenta();
-        for (let auto of autos) {
-            if (this.puedeComprar(auto, potencialComprador)) {
+        let autosParaVenta = this.autosParaLaVenta();
+        for (let auto of autosParaVenta) {
+            if (this.puedeComprar(auto, cliente)) {
                mostrarCliente.push(auto);
             }                   
         }
-        return mostrarCliente;
+       return mostrarCliente;
     }
 }
 
-console.log(concesionaria.venderAuto("JJK116"))
+console.log(concesionaria.venderAuto("APL123"))
 console.log(concesionaria.autosParaLaVenta())
 console.log(concesionaria.autosNuevos());
 console.log(concesionaria.listaDeVentas());
 console.log(concesionaria.totalDeVentas());
 console.log(concesionaria.puedeComprar(autos[0], potencialComprador));
-console.log(concesionaria.autosQuePuedeComprar());
-
+console.log(concesionaria.autosQuePuedeComprar(potencialComprador));
 

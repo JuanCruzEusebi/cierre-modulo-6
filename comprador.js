@@ -1,7 +1,7 @@
 let potencialComprador = {
     nombre: "Juan",
-    capacidadDePagoEnCuotas: 7200    ,
-    capacidadDePagoTotal: 100000000     
+    capacidadDePagoEnCuotas: 72000   ,
+    capacidadDePagoTotal: 100000000    
 }
 
 module.exports = potencialComprador;
